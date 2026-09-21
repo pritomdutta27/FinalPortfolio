@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #080B0A;
+    color: #F5F7F6;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: rgba(93, 208, 139, 0.3);
+    color: #F5F7F6;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #080B0A;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #26312C;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #5DD08B;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 md:px-8 lg:px-12;
+  }
+
+  .section-padding {
+    @apply py-24 md:py-32 lg:py-40;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand to-brand-hover;
+  }
+
+  .card-base {
+    @apply bg-surface-card border border-border rounded-card transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:border-brand hover:shadow-glow hover:-translate-y-1;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-brand text-surface-primary font-heading font-semibold rounded-button
+           transition-all duration-300 hover:bg-brand-hover hover:-translate-y-0.5 hover:shadow-glow;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-transparent border border-border text-text-primary font-heading font-medium rounded-button
+           transition-all duration-300 hover:border-brand hover:text-brand;
+  }
+
+  .eyebrow {
+    @apply font-mono text-xs tracking-[0.2em] uppercase text-brand;
+  }
+
+  .section-heading {
+    @apply font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-text-primary leading-tight;
+  }
+
+  .section-subtitle {
+    @apply font-body text-lg text-text-secondary max-w-2xl;
+  }
+
+  .tech-chip {
+    @apply inline-flex items-center px-3 py-1.5 bg-surface-elevated border border-border rounded-badge
+           font-mono text-xs text-text-secondary transition-all duration-300
+           hover:border-brand hover:text-brand hover:shadow-glow;
+  }
+
+  .nav-link {
+    @apply font-body text-sm text-text-secondary transition-colors duration-300 hover:text-brand;
+  }
+
+  .nav-link-active {
+    @apply text-brand;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
